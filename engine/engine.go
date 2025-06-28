@@ -163,6 +163,7 @@ func (be *BitcaskEngine) Delete(key string) error {
 
 	if _, ok := be.Keydir[key]; !ok {
 		log.Printf("Attempted to delete non-existent key '%s'", key)
+		// NOTE: I'm unsure if this is an error or not
 		return fmt.Errorf("key '%s' not found for deletion", key)
 	}
 
